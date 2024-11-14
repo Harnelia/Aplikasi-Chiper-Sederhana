@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homepage - Rail Fence Cipher</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body class="homepage-body">
+    <div class="background-image"></div> <!-- Latar belakang gambar -->
+    <div class="container">
+        <h1>Selamat Datang di Aplikasi Cipher</h1>
+        <!-- Gambar di dalam container -->
+        <img src="{{ url_for('static', filename='images/kunci.jpg') }}" alt="Gambar Kunci" class="container-image" />
+        <div class="card-container">
+            <a href="{{ url_for('rail_fence') }}" class="card">
+                <h2 class="card-title">Mulai</h2>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

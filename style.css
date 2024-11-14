@@ -1,0 +1,198 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('/static/images/Latar.jpg');
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 800px;
+    background: rgba(6, 127, 146);
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.container-image {
+    width: 300px;
+    height: auto;
+    border-radius: 8px;
+    margin: 0 auto;
+    display: block;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+label {
+    font-weight: bold;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.short-input {
+    width: 100%;
+    max-width: 409px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.buttons {
+    display: flex;
+    gap: 100px;
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.btn-green {
+    background-color: #0d4370;
+}
+
+.btn-blue {
+    background-color: #0d4370;
+}
+
+.btn-red {
+    background-color: #f44336;
+}
+
+.visualization, .result {
+    margin-top: 35px;
+    color: #ffffff;
+}
+
+.visualization h3 {
+    font-size: 1.2em;
+}
+.result h3 {
+    font-size: 1.2em;
+}
+
+.result p {
+    font-size: 1.1em;
+}
+
+.rail-fence-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.rail-fence {
+    display: inline-block;
+    border: 1px solid #ddd;
+    padding: 10px;
+    background-color: #1e3a47;
+    border-radius: 4px;
+}
+
+.rail-row {
+    display: flex;
+}
+
+.rail-cell {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2px;
+    border: 1px solid #ddd;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #0d4370;
+}
+
+.rail-cell.empty {
+    background-color: #1e3a47;
+}
+
+.home-options {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.info-section {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.info-section h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.info-section p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #555;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.card {
+    background-color: #0d4370;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    min-width: 80px;
+}
+
+.card-title {
+    color: #ffffff;
+    margin: 0;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.card-description {
+    color: #b0c4de;
+}
+
+.btn-grey {
+    background-color: #f44336;
+    color: #ffffff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* .btn-grey:hover {
+    background-color: #2196F3;
+    color: #fff;
+} */

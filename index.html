@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KRIPTOGRAFI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+    <div class="container">
+        <div class="other-content">
+            <button onclick="goToHomepage()" class="btn btn-grey">X</button>
+
+            <h1>Transposisi Rail Fence Chiper</h1>
+            <!-- Form dengan penanganan submit khusus -->
+            <form method="POST" onsubmit="return handleFormSubmit(event)">
+                <div class="input-group">
+                    <label for="text">Masukkan Teks:</label>
+                    <input
+                        type="text"
+                        name="text"
+                        id="text"
+                        value="{{ text }}"
+                        required
+                        class="short-input"
+                    />
+                </div>
+                <div class="input-group">
+                    <label for="rail">Jumlah Rail:</label>
+                    <input
+                        type="number"
+                        name="rail"
+                        id="rail"
+                        value="{{ rail }}"
+                        min="2"
+                        required
+                        class="short-input"
+                    />
+                </div>
+                <div class="buttons">
+                    <button
+                        type="submit"
+                        name="action"
+                        value="encrypt"
+                        class="btn btn-green"
+                        onclick="return handleAction('encrypt')"
+                    >
+                        Enkripsi
+                    </button>
+                    <button
+                        type="submit"
+                        name="action"
+                        value="decrypt"
+                        class="btn btn-blue"
+                        onclick="return handleAction('decrypt')"
+                    >
+                        Dekripsi
+                    </button>
+                    <button type="button" onclick="handleReset()" class="btn btn-red">
+                        Reset
+                    </button>
+                </div>
+            </form>
+            
+            {% if visualization %}
+            <div id="visualization" class="visualization">
+                <h3>Visualisasi Rail Fence:</h3>
+                <div class="rail-fence-container">{{ visualization | safe }}</div>
+            </div>
+            {% endif %}
+
+            {% if action %}
+            <div id="result" class="result">
+                <h3>{{ result_label }}:</h3>
+                {% if action == 'encrypt' %}
+                    <p><strong>Ciphertext:</strong> {{ ciphertext }}</p>
+                {% elif action == 'decrypt' %}
+                    <p><strong>Plaintext:</strong> {{ plaintext }}</p>
+                {% endif %}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+    
+    <script>
+        
+        let hasResult = {{ 'true' if action else 'false' }};
+
+        function goToHomepage() {
+            window.location.href = "/";
+        }
+
+        function handleAction(actionType) {
+            hasResult = true;
+            return true;
+        }
+
+        function handleFormSubmit(event) {
+            return true;
+        }
+
+        function handleReset() {
+            document.getElementById("text").value = "";
+            document.getElementById("rail").value = "3";
+            
+            window.location.href = "/rail-fence";
+        }
+
+        window.onload = function() {
+            if (!hasResult) {
+                const vizElement = document.getElementById("visualization");
+                const resultElement = document.getElementById("result");
+                
+                if (vizElement) vizElement.style.display = "none";
+                if (resultElement) resultElement.style.display = "none";
+            }
+        };
+    </script>
+</body>
+</html>
